@@ -53,7 +53,7 @@ function deleteLastElement()
 {
     let listItemArray = document.querySelectorAll(".listItem")
     console.log(listItemArray)
-    Array.prototype.forEach.call( element, function( node ) {
+    Array.prototype.forEach.call( listItemArray, function( node ) {
         node.parentNode.removeChild( node );
     });
 }
