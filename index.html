@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>TODO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="page_title">TODO</h1>
+    </header>
+
+    <main id="main">
+        <div class="taskInput">
+            <input type="text" name="taskContent" id="taskContent" placeholder="Napisz tu coś...">
+            <div class="cross"><img src="/img/plus.png" alt="plus" onclick="addListElement(taskContent.value)"></div>
+            <div class="cross"><img src="/img/minus.png" alt="minus" onclick="deleteLastElement()"></div>
+        </div>
+        <div class="list"></div>
+    </main>
+
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>
