@@ -34,7 +34,7 @@ function addListElement(text)
        
         itemContent.innerHTML = `<p>${text}</p>`
         document.getElementById("taskContent").value = ""
-        minus.innerHTML = `<img src="/img/minus.png" alt="minus" onclick="removeElement(${counter})">`
+        minus.innerHTML = `<img src="https://cdn-icons.flaticon.com/png/512/1665/premium/1665663.png?token=exp=1655194918~hmac=2797fed9bd102d40f4d0057bd3bc05bag" alt="minus" onclick="removeElement(${counter})">`
         itemContent.appendChild(minus)
 
         newItem.appendChild(itemContent)
