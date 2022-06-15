@@ -1,5 +1,23 @@
-addEventListener("keydown",decectKey)
+let allElements = []
 
+function loadElements()
+{
+    const arrLength = window.localStorage.getItem("length")
+    if(arrLength > 0)
+    {
+        let tab = window.localStorage.getItem("elements").split(",")
+        for(let i=0;i<arrLength;i++)
+        {
+            addListElement(tab[i])
+        }
+    }
+}
+
+
+
+
+
+addEventListener("keydown",decectKey)
 function decectKey(event)
 {
    let text = document.getElementById("taskContent").value
@@ -39,6 +57,8 @@ function addListElement(text)
             minus.innerHTML = `<img src="https://icons-for-free.com/download-icon-minus+reduce+subtract+icon-1320085760528603434_512.png" alt="minus" onclick="removeElement(${counter})">`
             itemContent.appendChild(minus)
     
+            allElements.push(text)
+            // console.log(allElements)
             newItem.appendChild(itemContent)
             document.querySelector(".list").appendChild(newItem)
         }
@@ -52,10 +72,13 @@ function addListElement(text)
 function deleteLastElement()
 {
     let listItemArray = document.querySelectorAll(".listItem")
-    console.log(listItemArray)
     Array.prototype.forEach.call( listItemArray, function( node ) {
         node.parentNode.removeChild( node );
     });
+
+    console.log(allElements)
+    allElements.length = 0
+    counter = 0
 }
 function removeElement(position)
 {
@@ -67,3 +90,8 @@ function taskDone(i)
 {
     document.querySelector(`.task-${i}`).classList.toggle("complete")
 }
+window.addEventListener("beforeunload", function () {
+    console.log("nauraa")
+    window.localStorage.setItem("elements",allElements)
+    window.localStorage.setItem("length",allElements.length)
+});
