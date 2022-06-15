@@ -52,7 +52,7 @@ function addListElement(text)
             itemContent.classList.add("itemContent")
     
            
-            itemContent.innerHTML = `<p onclick="taskDone(${counter})" class="task-${counter}">${text}</p>`
+            itemContent.innerHTML = `<p onclick="taskDone(${counter})" class="task-${counter} task">${text}</p>`
             document.getElementById("taskContent").value = ""
             minus.innerHTML = `<img src="https://icons-for-free.com/download-icon-minus+reduce+subtract+icon-1320085760528603434_512.png" alt="minus" onclick="removeElement(${counter})">`
             itemContent.appendChild(minus)
@@ -83,6 +83,9 @@ function deleteLastElement()
 function removeElement(position)
 {
     let element = document.querySelector(`.item-${position}`)
+    const elementChild = document.querySelector(".itemContent")
+    const index = allElements.indexOf(elementChild.querySelector(".task").textContent)
+    allElements.splice(index,1)
     element.remove()
 }
 
