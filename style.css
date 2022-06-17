@@ -7,7 +7,7 @@
 
 header{
     top:0;
-    width:100%;
+    width:100vw;
     height:100px;
     background-color: #22223b;
     color:#f6fff8;
@@ -20,7 +20,8 @@ header{
 }
 
 main{
-    width:400px;
+    width:100vw;
+
     margin:0 auto;
     display:flex;
     align-items: center;
@@ -38,6 +39,7 @@ main{
     border-left: 20px solid #22223b;
 
 }
+
 .taskInput img{
     margin-top:10px;
     height:30px;
@@ -68,7 +70,6 @@ input{
 .itemTitle{
     color:whitesmoke;
     font-size:18px;
-    
     
     display:flex;
     justify-content: center;
@@ -101,14 +102,19 @@ input{
 }
 @media screen and (max-width:700px) {
  .itemContent{
-    width:70%;
+    width:340px;
     margin:0 auto;
  }   
  .taskInput{
     width:360px;
- }
 }
 
+}
+@media screen and (max-width:480px) {
+    .listItem{
+        width:100vw;
+    }
+}
 .complete{
     color:green;
     text-decoration: line-through;
